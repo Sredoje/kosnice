@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @apiary.name %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @apiary.location %>
+</p>
+
+<p>
+  <strong>Hive type:</strong>
+  <%= @apiary.hive_type %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @apiary.user_id %>
+</p>
+
+<%= link_to 'Edit', edit_apiary_path(@apiary) %> |
+<%= link_to 'Back', apiaries_path %>
