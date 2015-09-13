@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Hives</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Number</th>
+      <th>Hive Type</th>
+      <th>Apiary</th>
+      <th>Order</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @hives.each do |hive| %>
+      <tr>
+        <td><%= hive.number %></td>
+        <td><%= hive.hive_type %></td>
+        <td><%= hive.apiary_id %></td>
+        <td><%= hive.order_id %></td>
+        <td><%= link_to 'Show', hive %></td>
+        <td><%= link_to 'Edit', edit_hive_path(hive) %></td>
+        <td><%= link_to 'Destroy', hive, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Hive', new_hive_path %>

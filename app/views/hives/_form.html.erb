@@ -1,0 +1,37 @@
+<%= form_for(@hive) do |f| %>
+  <% if @hive.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@hive.errors.count, "error") %> prohibited this hive from being saved:</h2>
+
+      <ul>
+      <% @hive.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :number %><br>
+    <%= f.number_field :number %>
+  </div>
+  <div class="field">
+    <%= f.label :hive_type %><br>
+    <%= f.text_field :hive_type %>
+  </div>
+  <div class="field">
+    <%= f.label :apiary_id %><br>
+    <%= f.select(:apiary_id) do %>
+      <% @apiaries.each do |apiary| -%>
+        <%= content_tag(:option, apiary.name, value: apiary.id) %>
+      <% end %>
+    <% end %>
+  </div>
+  <div class="field">
+    <%= f.label :order_id %><br>
+    <%= f.number_field :order_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

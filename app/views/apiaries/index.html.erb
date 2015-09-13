@@ -1,33 +1,31 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Apiaries</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Location</th>
-      <th>Hive type</th>
-      <th>User</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @apiaries.each do |apiary| %>
-      <tr>
-        <td><%= apiary.name %></td>
-        <td><%= apiary.location %></td>
-        <td><%= apiary.hive_type %></td>
-        <td><%= apiary.user_id %></td>
-        <td><%= link_to 'Show', apiary %></td>
-        <td><%= link_to 'Edit', edit_apiary_path(apiary) %></td>
-        <td><%= link_to 'Destroy', apiary, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<h1>Apiaries</h1>
+<div class="row">
+	<% @apiaries.each do |apiary| %>
+	<div class="row">
+		<div class="apiary-header">
+			<h2>
+				<%= apiary.name %>
+			</h2>
+			<%= link_to 'Edit', edit_apiary_path(apiary) %>
+			<%= link_to 'Destroy', apiary, method: :delete, data: { confirm: 'Are you sure?' } %>
+		</div>
+		
+		<p>Location: <%= apiary.location %> </p>
+   		<% if apiary.hives %>
+   		<h3>Hives</h3>
+		<% apiary.hives.each do |hive| %>
+		<div class="hive">
+		Hive number: <%= hive.number %>
+		</div>
+		<% end %>
+	<% end %>
+ </div>
+ <% end %>
 
 <br>
 
 <%= link_to 'New Apiary', new_apiary_path %>
+
+<%= link_to 'New Hive', new_hive_path %>

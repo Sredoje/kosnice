@@ -32,7 +32,6 @@ class ApiariesController < ApplicationController
   # POST /apiaries.json
   def create
     @apiary = Apiary.new(apiary_params)
-    puts @apiary
     respond_to do |format|
       if @apiary.save
         format.html { redirect_to @apiary, notice: 'Apiary was successfully created.' }

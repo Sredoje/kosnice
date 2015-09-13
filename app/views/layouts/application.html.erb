@@ -34,6 +34,9 @@
 					    <a href="#">Logged in as <%= current_user.email %></a>
 					</li>
 					<li>
+					    <%= link_to "Apiaries", apiaries_path %>
+					</li>
+					<li>
 					    <%= link_to "Log out", destroy_user_session_path, :method => 'delete' %>
 					</li>
 					<% else %>
@@ -58,7 +61,7 @@
     		<%= render partial: "shared/flash_messages", flash: flash %> 
     	</div>
         <div class="row">
-            <div class="col-lg-12 text-center">
+            <div class="col-lg-12">
                 <%= yield %>
             </div>
         </div>
