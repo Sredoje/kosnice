@@ -9,7 +9,7 @@ Logovanje - Devise
 https://github.com/plataformatec/devise
 
 ## To do
-1. Za lokaciju dodaj jos jednu kolonu, da imas ath i long za google mape, pogledaj da li moze da se ubaci 2 km radius krug na mapu
+1. Dodaj google mape, pogledaj da li moze da se ubaci 2 km radius krug na mapu
 2. Napravi order(mogu koristim jquery sortable)
 3. Dodaj validacije na sva polja, unique length
 4. Napravi da tipovi kosnica budu select a ne input text
