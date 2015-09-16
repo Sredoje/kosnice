@@ -12,7 +12,9 @@
 			<%= link_to 'Destroy', apiary, method: :delete, data: { confirm: 'Are you sure?' } %>
 		</div>
 		
-		<p>Location: <%= apiary.location %> </p>
+		<p>Location:</p>
+		<p>Longitude: <%= apiary.lon %></p>
+		<p>Latitude: <%= apiary.lat %></p>
    		<% if apiary.hives %>
    		<h3>Hives</h3>
 		<% apiary.hives.each do |hive| %>

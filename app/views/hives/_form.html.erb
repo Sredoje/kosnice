@@ -17,7 +17,11 @@
   </div>
   <div class="field">
     <%= f.label :hive_type %><br>
-    <%= f.text_field :hive_type %>
+    <%= f.select(:hive_type) do %>
+      <% Hive.hive_types.each do |hive_type| -%>
+        <%= content_tag(:option, hive_type, value: hive_type, selected: is_selected(hive_type, @hive.hive_type)) %>
+      <% end %>
+    <% end %>
   </div>
   <div class="field">
     <%= f.label :apiary_id %><br>

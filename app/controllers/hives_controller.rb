@@ -20,6 +20,7 @@ class HivesController < ApplicationController
 
   # GET /hives/1/edit
   def edit
+    @apiaries = Apiary.where(user_id:current_user.id)
   end
 
   # POST /hives
@@ -70,6 +71,6 @@ class HivesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def hive_params
-      params.require(:hive).permit(:number, :type, :apiary_id, :order_id)
+      params.require(:hive).permit(:number, :hive_type, :apiary_id, :order_id)
     end
 end

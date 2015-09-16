@@ -34,8 +34,8 @@ class ApiariesController < ApplicationController
     @apiary = Apiary.new(apiary_params)
     respond_to do |format|
       if @apiary.save
-        format.html { redirect_to @apiary, notice: 'Apiary was successfully created.' }
-        format.json { render :show, status: :created, location: @apiary }
+        format.html { redirect_to apiaries_path, notice: 'Apiary was successfully created.' }
+        format.json { render :new, status: :created, location: @apiary }
       else
         format.html { render :new }
         format.json { render json: @apiary.errors, status: :unprocessable_entity }
@@ -75,6 +75,6 @@ class ApiariesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def apiary_params
-      params.require(:apiary).permit(:name, :location, :hive_type, :user_id)
+      params.require(:apiary).permit(:name, :lon, :lat, :hive_type, :user_id)
     end
 end
