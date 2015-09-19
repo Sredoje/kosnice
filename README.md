@@ -15,10 +15,12 @@ https://github.com/plataformatec/devise
 - [x] Napravi da tipovi kosnica budu select ( mogu konstante ima ih samo par ) a ne inputi
 - [ ] Pogledaj permisije brisanja kosnica ? Da li svaki user moze da brise svaku kosnicu ( ne bi trebalo da moze )
 - [ ] Napravi emailer za taskove
-- [ ] Dodaj komentare za pcelinjake i kosnice
-- [ ] Dodaj nastavke sa tekstom
+- [ ] Dodaj komentare za kosnice
+- [x] Dodaj nastavke sa tekstom
+- [ ] Dodati brisanje nastavaka, ordering (ovo na kraju)
+- [ ] Dodati boje nastavaka, (dobar, treba da se radi nesto na njemu, los), ordering (ovo na kraju)
 - [ ] Dodati nastavku broj ramova sa tipovima (prazno, polen, med, trutovi, svaki ram moze da ima svoj tip, samo izbaciti count
-tipa: 3 rama sace, 4 rama prazno, 2 rama trutovi, 1 med
+tipa: 3 rama sace, 4 rama prazno, 2 rama trutovi, 1 med ( ovo mogu da radim sa pravougaonicima sa obojama, tipa polen/med budu dve boje)
 
 ## Optional
 - [ ] Pogledaj za translate

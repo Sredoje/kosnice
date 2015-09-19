@@ -18,9 +18,20 @@
    		<% if apiary.hives %>
    		<h3>Hives</h3>
 		<% apiary.hives.each do |hive| %>
-		<div class="hive">
-		Hive number: <%= hive.number %>
-		</div>
+			<div class="hive col-lg-2">
+				<h4>Hive number: <%= hive.number %></h4>
+				<div class="extensions col-lg-12">
+					<% hive.extensions.each do |extension|%>
+					<p>Nastavak (PROMENI)</p>
+					<% end %>
+					<% if hive.extensions.count < 3 %>
+						<%= form_tag('/extensions', remote: true, method: 'create') do %>
+							<%= hidden_field_tag 'extension[hive_id]', hive.id %>
+							<%= link_to "Add extension", '#', class: "add_extension" %>
+						<% end %>
+					<% end %> 
+				</div>
+			</div>
 		<% end %>
 	<% end %>
  </div>

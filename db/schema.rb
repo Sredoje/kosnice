@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150914182552) do
+ActiveRecord::Schema.define(version: 20150919172610) do
 
   create_table "apiaries", force: :cascade do |t|
     t.string   "name"
@@ -24,6 +24,13 @@ ActiveRecord::Schema.define(version: 20150914182552) do
   end
 
   add_index "apiaries", ["user_id"], name: "index_apiaries_on_user_id"
+
+  create_table "extensions", force: :cascade do |t|
+    t.integer  "order_id"
+    t.integer  "hive_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "hives", force: :cascade do |t|
     t.integer  "number"

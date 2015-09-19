@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Order:</strong>
+  <%= @extension.order_id %>
+</p>
+
+<p>
+  <strong>hive_id:</strong>
+  <%= @extension.hive_id %>
+</p>
+
+<%= link_to 'Edit', edit_extension_path(@extension) %> |
+<%= link_to 'Back', extensions_path %>
