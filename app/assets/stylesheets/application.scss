@@ -14,3 +14,14 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "custom";
+@import "hives";
+@import "frames";
+@import "extensions";
+
+.padding-none {
+	padding:0 !important;
+}
+#map {
+    height: 250px;
+    width: 100%;
+}

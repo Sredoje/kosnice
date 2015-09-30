@@ -21,8 +21,6 @@ class ApiariesController < ApplicationController
   # GET /apiaries/1/edit
   def edit
     @apiary = Apiary.find(params[:id])
-    Rails.logger.info @apiary
-    Rails.logger.info "Some debugging info" "SREDOJE"
     if @apiary.user_id != current_user.id
       redirect_to apiaries_path
     end

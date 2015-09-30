@@ -25,9 +25,9 @@ class ExtensionsController < ApplicationController
   # POST /extensions.json
   def create
     @extension = Extension.new(extension_params)
-
     respond_to do |format|
       if @extension.save
+        frames = Frame.create(empty_frames_array @extension)
         format.html { redirect_to @extension, notice: 'Extension was successfully created.' }
         format.json { render :show, status: :created, location: @extension }
       else
@@ -71,5 +71,15 @@ class ExtensionsController < ApplicationController
     # Add order id for hive if you want to reorder them
     def extension_params
       params.require(:extension).permit(:hive_id)
+    end
+    
+    # Create default array with 8 empty frames
+    # TODO: Change number of empty frames based on type of the hive
+    def empty_frames_array(extension)
+      default_frames = Array.new
+      (0..7).each do |i|
+         default_frames.push({:frame_type => "empty",:extension_id => extension.id })
+      end
+      default_frames
     end
 end

@@ -18,11 +18,19 @@ https://github.com/plataformatec/devise
 - [ ] Dodaj komentare za kosnice
 - [x] Dodaj nastavke sa tekstom
 - [ ] Dodati brisanje nastavaka, ordering (ovo na kraju)
+- [ ] Broj ramova treba dodavati na tip kosnice extension_controller frames_array tu promeni(izvuci od hive-a)
 - [ ] Dodati boje nastavaka, (dobar, treba da se radi nesto na njemu, los), ordering (ovo na kraju)
 - [ ] Dodati nastavku broj ramova sa tipovima (prazno, polen, med, trutovi, svaki ram moze da ima svoj tip, samo izbaciti count
 tipa: 3 rama sace, 4 rama prazno, 2 rama trutovi, 1 med ( ovo mogu da radim sa pravougaonicima sa obojama, tipa polen/med budu dve boje)
+- [ ] Namesti kaskadno brisanje
 
 ## Optional
 - [ ] Pogledaj za translate
 - [ ] Hostuj na heroku
 - [ ] Dodaj ssl
+- [ ] .scrollable Ovo racunaj javascriptom (broj kosnica * sirina kosnice + prazan prostor) da ne bi bio veliki prostor
+
+## Priorty
+
+- [ ] Kada ti vraca ajax iz add extension uhvati sve frame-ove, bitno je zbog id-jeva
+- [ ] Za google mape stavi da ti bude teren po default-u i da ti izvlaci iz javascripta coordinate
