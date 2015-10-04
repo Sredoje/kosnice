@@ -8,6 +8,9 @@ http://stackoverflow.com/questions/21819184/using-twitter-bootstrap-modals-as-a-
 Logovanje - Devise
 https://github.com/plataformatec/devise
 
+Za ajax responsove - Jbuilder
+https://github.com/rails/jbuilder
+
 ## To do
 - [ ] Dodaj google mape, pogledaj da li moze da se ubaci 2 km radius krug na mapu
 - [ ] Napravi order(mogu koristim jquery sortable)
@@ -32,5 +35,5 @@ tipa: 3 rama sace, 4 rama prazno, 2 rama trutovi, 1 med ( ovo mogu da radim sa p
 
 ## Priorty
 
-- [ ] Kada ti vraca ajax iz add extension uhvati sve frame-ove, bitno je zbog id-jeva
+- [x] Kada ti vraca ajax iz add extension uhvati sve frame-ove, bitno je zbog id-jeva
 - [ ] Za google mape stavi da ti bude teren po default-u i da ti izvlaci iz javascripta coordinate

@@ -10,6 +10,8 @@ class ExtensionsController < ApplicationController
   # GET /extensions/1
   # GET /extensions/1.json
   def show
+    Rails.logger.info "USAO U SHOW"
+    Rails.logger.info @extension
   end
 
   # GET /extensions/new
@@ -27,7 +29,7 @@ class ExtensionsController < ApplicationController
     @extension = Extension.new(extension_params)
     respond_to do |format|
       if @extension.save
-        frames = Frame.create(empty_frames_array @extension)
+        @frames = Frame.create(empty_frames_array @extension)
         format.html { redirect_to @extension, notice: 'Extension was successfully created.' }
         format.json { render :show, status: :created, location: @extension }
       else

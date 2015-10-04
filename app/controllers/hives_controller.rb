@@ -30,7 +30,7 @@ class HivesController < ApplicationController
 
     respond_to do |format|
       if @hive.save
-        format.html { redirect_to @hive, notice: 'Hive was successfully created.' }
+        format.html { redirect_to apiaries_path, notice: 'Hive was successfully created.' }
         format.json { render :show, status: :created, location: @hive }
       else
         format.html { render :new }

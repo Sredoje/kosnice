@@ -24,7 +24,7 @@
 						<% hive.extensions.each do |extension|%>
 						<div class="extension">
 							<% extension.frames.each do |frame|%>
-								<div class="frame type-<%= frame.frame_type %>"></div>
+								<div class="frame type-<%= frame.frame_type %>" data-id="<%= frame.id %>"></div>
 							<% end %>
 						</div>
 						<% end %>
@@ -34,7 +34,7 @@
 					<% if hive.extensions.count < 3 %>
 						<%= form_tag('/extensions', remote: true, method: 'create') do %>
 							<%= hidden_field_tag 'extension[hive_id]', hive.id %>
-							<%= link_to "Add extension", '#', class: "add_extension" %>
+							<%= link_to "Add extension", 'javascript:void(0)', class: "add_extension" %>
 						<% end %>
 					<% end %> 
 				</div>
@@ -45,9 +45,9 @@
  </div>
  <% end %>
 
-<script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBFYK-bGfNzEBwEc0zXf1tXxEmjnQrFW7g&callback=initMap"></script>
-<br>
+<!-- <script async defer
+//         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBFYK-bGfNzEBwEc0zXf1tXxEmjnQrFW7g&callback=initMap"></script>
+<br> -->
 
 <%= link_to 'New Apiary', new_apiary_path %>
 
