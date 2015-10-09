@@ -22,10 +22,12 @@
 				<div class="hive col-lg-2">
 					<div class="extensions col-lg-12 padding-none">
 						<% hive.extensions.each do |extension|%>
-						<div class="extension">
+						<div class="extension" data-toggle="popover" title="Edit extension">
+							<div class="center-extension">
 							<% extension.frames.each do |frame|%>
 								<div class="frame type-<%= frame.frame_type %>" data-id="<%= frame.id %>"></div>
 							<% end %>
+							</div>
 						</div>
 						<% end %>
 						
@@ -48,7 +50,6 @@
 <!-- <script async defer
 //         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBFYK-bGfNzEBwEc0zXf1tXxEmjnQrFW7g&callback=initMap"></script>
 <br> -->
-
 <%= link_to 'New Apiary', new_apiary_path %>
 
 <%= link_to 'New Hive', new_hive_path %>

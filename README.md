@@ -26,6 +26,7 @@ https://github.com/rails/jbuilder
 - [ ] Dodati nastavku broj ramova sa tipovima (prazno, polen, med, trutovi, svaki ram moze da ima svoj tip, samo izbaciti count
 tipa: 3 rama sace, 4 rama prazno, 2 rama trutovi, 1 med ( ovo mogu da radim sa pravougaonicima sa obojama, tipa polen/med budu dve boje)
 - [ ] Namesti kaskadno brisanje
+- [ ] Za google mape stavi da ti bude teren po default-u i da ti izvlaci iz javascripta coordinate
 
 ## Optional
 - [ ] Pogledaj za translate
@@ -36,4 +37,4 @@ tipa: 3 rama sace, 4 rama prazno, 2 rama trutovi, 1 med ( ovo mogu da radim sa p
 ## Priorty
 
 - [x] Kada ti vraca ajax iz add extension uhvati sve frame-ove, bitno je zbog id-jeva
-- [ ] Za google mape stavi da ti bude teren po default-u i da ti izvlaci iz javascripta coordinate
+- [ ] Menjanje modova nastavka, i brisanje nastavka u togglu

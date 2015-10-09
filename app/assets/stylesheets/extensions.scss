@@ -19,3 +19,19 @@
     box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.75);
     margin-bottom: 1px;
 }
+.center-extension {
+    width:80%;
+    margin-left:9.5%;
+}
+.extensions .popover {
+    width: 300px;
+}
+.extension.good {
+    border-bottom: 4px #449D44 solid;
+}
+.extension.modify {
+    border-bottom: 4px #F0AD4E solid;
+}
+.extension.bad {
+    border-bottom: 4px #D9534F solid;
+}
