@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150930203538) do
+ActiveRecord::Schema.define(version: 20151010194220) do
 
   create_table "apiaries", force: :cascade do |t|
     t.string   "name"
@@ -28,8 +28,9 @@ ActiveRecord::Schema.define(version: 20150930203538) do
   create_table "extensions", force: :cascade do |t|
     t.integer  "order_id"
     t.integer  "hive_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.string   "state",      default: "good"
   end
 
   create_table "frames", force: :cascade do |t|

@@ -10,8 +10,7 @@ class ExtensionsController < ApplicationController
   # GET /extensions/1
   # GET /extensions/1.json
   def show
-    Rails.logger.info "USAO U SHOW"
-    Rails.logger.info @extension
+
   end
 
   # GET /extensions/new
@@ -26,6 +25,7 @@ class ExtensionsController < ApplicationController
   # POST /extensions
   # POST /extensions.json
   def create
+    params = extension_params
     @extension = Extension.new(extension_params)
     respond_to do |format|
       if @extension.save
@@ -72,7 +72,7 @@ class ExtensionsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     # Add order id for hive if you want to reorder them
     def extension_params
-      params.require(:extension).permit(:hive_id)
+      params.require(:extension).permit(:hive_id, :state)
     end
     
     # Create default array with 8 empty frames

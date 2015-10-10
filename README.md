@@ -22,7 +22,7 @@ https://github.com/rails/jbuilder
 - [x] Dodaj nastavke sa tekstom
 - [ ] Dodati brisanje nastavaka, ordering (ovo na kraju)
 - [ ] Broj ramova treba dodavati na tip kosnice extension_controller frames_array tu promeni(izvuci od hive-a)
-- [ ] Dodati boje nastavaka, (dobar, treba da se radi nesto na njemu, los), ordering (ovo na kraju)
+- [x] Dodati boje nastavaka, (dobar, treba da se radi nesto na njemu, los)
 - [ ] Dodati nastavku broj ramova sa tipovima (prazno, polen, med, trutovi, svaki ram moze da ima svoj tip, samo izbaciti count
 tipa: 3 rama sace, 4 rama prazno, 2 rama trutovi, 1 med ( ovo mogu da radim sa pravougaonicima sa obojama, tipa polen/med budu dve boje)
 - [ ] Namesti kaskadno brisanje
@@ -37,4 +37,5 @@ tipa: 3 rama sace, 4 rama prazno, 2 rama trutovi, 1 med ( ovo mogu da radim sa p
 ## Priorty
 
 - [x] Kada ti vraca ajax iz add extension uhvati sve frame-ove, bitno je zbog id-jeva
+- [x] Brisanje nastavka u togglu
 - [ ] Menjanje modova nastavka, i brisanje nastavka u togglu
