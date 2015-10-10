@@ -1,4 +1,5 @@
 $(document).on('ready', function() {
+
 	// Function for setting popover
 	function setPopover(div) {
 		$(div).popover(
@@ -38,14 +39,13 @@ $(document).on('ready', function() {
 
   	// Add extension
 	$('.add_extension').on('click', function(e){
-		var hive_id = $(this).siblings('#extension_hive_id').val();
+		var hiveID = $(this).siblings('#extension_hive_id').val();
 		var hive = $(this).parents('.hive');
 		var data = {
 			extension:{
-				hive_id:hive_id
+				hive_id:hiveID
 			}
 		}
-		console.log("POSLAO AJAX");
 		$.ajax({
 		  type: "POST",
 		  url: '/extensions',
@@ -63,13 +63,15 @@ $(document).on('ready', function() {
 		  	var extension = $(extensions).children().first();
 		  	setPopover(extension);
 		  	// Hide add new button if there are 3 extensions
-		  	if($(extensions).children('div').size() == "3") {
-		  		var addExtensionLink = getAddExtensionLink(extensions);
+		  	if($(extensions).children('div.extension').size() == "3") {
+		  		var addExtensionLink = getAddExtensionLink(extension);
 		  		// Hide add extension link if there are three extensions
 		  		$(addExtensionLink).hide();
 		  	}
+		  	showSuccessNote("Successfuly added extension.");
 		  },
 		  error: function(response) {
+		  	showErrorNote("Error adding extension with response: " + response);
 		  },
 		  dataType: "json"
 		});
@@ -77,29 +79,34 @@ $(document).on('ready', function() {
 
 	// Delete extension
 	$(document).on('click', '.delete_extension', function(e) {
-		var extension = $(this).parents('.popover').prev();
-		var extension_id = $(extension).data('extension-id');
+		var extension = $(e.toElement).parents('.popover').prev();
+		var extensionID = $(extension).data('extension-id');
 		var extensions = $(extension).parent();
-
+		console.log(extension[0]);
 		$.ajax({
 		  type: "POST",
-		  url: '/extensions/' + extension_id,
+		  url: '/extensions/' + extensionID,
 		  data: {"_method":"delete"},
 		  success: function(response) {
+		  	var addExtensionLink = getAddExtensionLink(extension);
 		  	$(extension).popover('hide').remove();
-		  	var addExtensionLink = getAddExtensionLink(extensions);
 		  	
+
 		  	// Show extension link since now extension can be added
+		  	console.log(addExtensionLink);
 		  	$(addExtensionLink).show();
+
+		  	showSuccessNote("Successfuly removed extension.");
 		  },
 		  error: function(response) {
+		  	showErrorNote("Error removing extension with response: " + response);
 		  },
 		  dataType: "json"
 		});
 	});
 
 	// Get add_extension link from extensions
-	function getAddExtensionLink(extensions) {
-		return $(extensions).siblings('form').find('a');
+	function getAddExtensionLink(extension) {
+		return $(extension).parent().siblings('form').find('a');
 	}
 });

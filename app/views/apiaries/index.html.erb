@@ -1,6 +1,4 @@
 <p id="notice"><%= notice %></p>
-
-<h1>Apiaries</h1>
 <div class="row">
 	<% @apiaries.each do |apiary| %>
 	<div class="row">
@@ -8,14 +6,13 @@
 			<h2>
 				<%= apiary.name %>
 			</h2>
-			<%= link_to 'Edit', edit_apiary_path(apiary) %>
-			<%= link_to 'Destroy', apiary, method: :delete, data: { confirm: 'Are you sure?' } %>
+			<%= link_to 'Edit', edit_apiary_path(apiary), class: 'btn btn-primary' %>
+			<%= link_to 'Destroy', apiary, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
 		</div>
 		
 		<p>Location:</p>
 		<div id="map"></div>
    		<% if apiary.hives %>
-   		<h3>Hives</h3>
    		<div class="hives">
    			<div class="scrollable">
 			<% apiary.hives.each do |hive| %>
@@ -32,16 +29,16 @@
 						<% end %>
 					</div>
 					<div class="hive-number"><%= hive.number %></div>
-					<% if hive.extensions.count < 3 %>
-						<%= form_tag('/extensions', remote: true, method: 'create') do %>
-							<%= hidden_field_tag 'extension[hive_id]', hive.id %>
-							<%= link_to "Add extension", 'javascript:void(0)', class: "add_extension" %>
-						<% end %>
+					<%= form_tag('/extensions', remote: true, method: 'create') do %>
+						<%= hidden_field_tag 'extension[hive_id]', hive.id %>
+						<% tempStyle = hive.extensions.count < 3 ? '' : 'display:none' %>
+						<%= link_to "", 'javascript:void(0)', class: "add_extension glyphicon glyphicon-plus", style: tempStyle %>
 					<% end %> 
 				</div>
 			<% end %>
 			</div>
 		</div>
+	</div>
 	<% end %>
  </div>
  <% end %>
@@ -49,6 +46,7 @@
 <!-- <script async defer
 //         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBFYK-bGfNzEBwEc0zXf1tXxEmjnQrFW7g&callback=initMap"></script>
 <br> -->
-<%= link_to 'New Apiary', new_apiary_path %>
-
-<%= link_to 'New Hive', new_hive_path %>
+<div class="row mt-10">
+	<%= link_to 'New Apiary', new_apiary_path, class: 'btn btn-primary' %>
+	<%= link_to 'New Hive', new_hive_path, class: 'btn btn-primary' %>
+</div>

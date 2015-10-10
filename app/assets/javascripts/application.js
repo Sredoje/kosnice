@@ -16,3 +16,30 @@
 //= require_tree .
 //= require jquery
 //= require bootstrap-sprockets
+//= require jquery.noty.packaged.min
+
+
+function showNote(message, type) {
+		var n = noty({
+			layout: 'topCenter',
+		    text: message,
+		    type: type,
+		    animation: {
+		        open: {height: 'toggle'}, // jQuery animate function property object
+		        close: {height: 'toggle'}, // jQuery animate function property object
+		        easing: 'swing', // easing
+		        speed: 500 // opening & closing animation speed
+		    },
+		    theme: 'relax', // or 'relax'
+		    timeout: '3000',
+		    dismissQueue: true, // If you want to use queue feature set this true
+		});
+	}
+
+function showSuccessNote(message) {
+	showNote(message, 'success');
+}
+
+function showErrorNote(message) {
+	showNote(message, 'error');
+}
