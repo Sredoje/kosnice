@@ -38,4 +38,5 @@ tipa: 3 rama sace, 4 rama prazno, 2 rama trutovi, 1 med ( ovo mogu da radim sa p
 
 - [x] Kada ti vraca ajax iz add extension uhvati sve frame-ove, bitno je zbog id-jeva
 - [x] Brisanje nastavka u togglu
-- [ ] Menjanje modova nastavka, i brisanje nastavka u togglu
+- [x] Menjanje nastavka u togglu
+- [ ] Nasteluj response i kad vrati ajax da menja stejtove

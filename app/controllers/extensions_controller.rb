@@ -39,6 +39,20 @@ class ExtensionsController < ApplicationController
     end
   end
 
+  def set_state
+    params = set_state_params
+    @extension = Extension.find(params['id'])
+      respond_to do |format|
+      if @extension.update(:state => params['state'])
+        format.json { render :show, status: :ok, location: @extension }
+      else
+        format.json { render json: @extension.errors, status: 'Error changing state' }
+      end
+    end
+    # Rails.logger.debug params
+    # @extension = Extension.find(params.extension.hive_id);
+    # @extension.state = params.
+  end
   # PATCH/PUT /extensions/1
   # PATCH/PUT /extensions/1.json
   def update
@@ -75,6 +89,9 @@ class ExtensionsController < ApplicationController
       params.require(:extension).permit(:hive_id, :state)
     end
     
+    def set_state_params
+      params.require(:extension).permit(:id, :state)
+    end
     # Create default array with 8 empty frames
     # TODO: Change number of empty frames based on type of the hive
     def empty_frames_array(extension)

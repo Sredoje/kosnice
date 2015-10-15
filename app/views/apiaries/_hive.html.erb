@@ -1,0 +1,13 @@
+<div class="hive col-lg-2">
+	<div class="extensions col-lg-12 padding-none">
+		<% hive.extensions.each do |extension|%>
+		<%= render 'extension', extension:extension %>
+		<% end %>
+	</div>
+	<div class="hive-number"><%= hive.number %></div>
+	<%= form_tag('/extensions', remote: true, method: 'create') do %>
+		<%= hidden_field_tag 'extension[hive_id]', hive.id %>
+		<% tempStyle = hive.extensions.count < 3 ? '' : 'display:none' %>
+		<%= link_to "", 'javascript:void(0)', class: "add_extension glyphicon glyphicon-plus", style: tempStyle %>
+	<% end %> 
+</div>
