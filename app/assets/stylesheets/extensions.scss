@@ -23,18 +23,23 @@
     width:80%;
     margin-left:9.5%;
 }
+
 .extensions .popover {
     width: 300px;
 }
+
 .extension.good {
-    border-bottom: 2px #449D44 solid;
+    border-bottom: 3px #449D44 solid;
 }
+
 .extension.modify {
-    border-bottom: 2px #F0AD4E solid;
+    border-bottom: 3px #F0AD4E solid;
 }
+
 .extension.bad {
-    border-bottom: 2px #D9534F solid;
+    border-bottom: 3px #D9534F solid;
 }
+
 .add_extension {
     display: block;
     float: left;
@@ -48,6 +53,7 @@
     -moz-box-shadow: 1px 2px 5px 0px rgba(0, 0, 0, 0.40);
     box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.40);
 }
+
 .add_extension:hover, .add_extension:visited, .add_extension:focus {
     text-decoration: none;
 }

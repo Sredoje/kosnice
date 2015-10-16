@@ -11,6 +11,9 @@ https://github.com/plataformatec/devise
 Za ajax responsove - Jbuilder
 https://github.com/rails/jbuilder
 
+Ze heroku konvertovanje sqlite > postgres
+http://stackoverflow.com/questions/7086654/installing-postgres-on-windows-for-use-with-ruby-on-rails
+
 ## To do
 - [ ] Dodaj google mape, pogledaj da li moze da se ubaci 2 km radius krug na mapu
 - [ ] Napravi order(mogu koristim jquery sortable)
@@ -30,7 +33,7 @@ tipa: 3 rama sace, 4 rama prazno, 2 rama trutovi, 1 med ( ovo mogu da radim sa p
 
 ## Optional
 - [ ] Pogledaj za translate
-- [ ] Hostuj na heroku
+- [ ] Hostuj na heroku, ovo ce biti smorcina jer je heroku batalio sqlite, jedini free je postgres, ali mora da se instalira i da se konvertuje sa sqlite > postgres 
 - [ ] Dodaj ssl
 - [ ] .scrollable Ovo racunaj javascriptom (broj kosnica * sirina kosnice + prazan prostor) da ne bi bio veliki prostor
 
@@ -39,4 +42,4 @@ tipa: 3 rama sace, 4 rama prazno, 2 rama trutovi, 1 med ( ovo mogu da radim sa p
 - [x] Kada ti vraca ajax iz add extension uhvati sve frame-ove, bitno je zbog id-jeva
 - [x] Brisanje nastavka u togglu
 - [x] Menjanje nastavka u togglu
-- [ ] Nasteluj response i kad vrati ajax da menja stejtove
+- [x] Nasteluj response i kad vrati ajax da menja stejtovem
